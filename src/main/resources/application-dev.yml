@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:localhost:3306/banma_dev
+    data-username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+mybatis:
+  mapper-locations: classpath*:mapper/*.xml
+  type-aliases-package: com.github.vivian.repository
+  configuration:
+    call-setters-on-nulls: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
