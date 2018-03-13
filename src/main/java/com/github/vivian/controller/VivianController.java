@@ -18,28 +18,10 @@ import java.util.Map;
  */
 
 @Controller
-@RequestMapping(value = "/vivian")
 public class VivianController {
 
-	@RequestMapping(value = "/index")
+	@RequestMapping(value = "/")
 	public String hello(){
 		return "index";
-	}
-
-	@RequestMapping(value = "/pagination")
-	@ResponseBody
-	public Map<String,Object> pagination(HttpServletRequest request){
-
-		String page = request.getParameter("page");
-		Map<String,Object> map = new HashMap<>();
-		List<Vivian> vivianList = new ArrayList<>();
-		for(int i = 0;i<8;i++){
-			Vivian vivian = new Vivian();
-			vivian.setName("wangweiwei");
-			vivian.setSex("female");
-			vivianList.add(vivian);
-		}
-		map.put("user",vivianList);
-		return map;
 	}
 }

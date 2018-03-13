@@ -1,16 +1,105 @@
-<!DOCTYPE html>
-<html lang="en">
-<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.css}" />
-<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrapv3.css}" />
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-    <meta charset="UTF-8"/>
-    <title>Title</title>
+	<title>Our Love Story</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('img/digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet" />
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
 </head>
+
 <body>
-<h1>I Love You!</h1>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				<span class="comments">/**</span><br />
+				<span class="space"/><span class="comments">* 刷了半天的知乎,翻了好几遍你的微博,想着应该送个什么礼物...</span><br />
+				<span class="space"/><span class="comments">* 可是我连地址都不知道（哭/(ㄒoㄒ)/~~</span><br />
+				<span class="space"/><span class="comments">* 于是早早地下班坐下来,希望能赶在凌晨前写好这个页面,就以工科男的方式送出我的第一个礼物吧...</span><br />
+				<span class="space"/><span class="comments">*/</span><br />
+				Boy i = <span class="keyword">new</span> Boy(<span class="string">"Eric"</span>);<br />
+				Girl u = <span class="keyword">new</span> Girl(<span class="string">"Vivian"</span>);<br />
+				<span class="comments">// 六年前的那一天我跟你擦肩而过,那是我第一次看到你的样子 </span><br />
+				i.love(u);<br />
+				<span class="comments">// 周五那天我们聊了很久...可是我还有很多话没来得及说...那天做梦都在笑 </span><br />
+				we.talk();<br />
+				<span class="comments">// 从那之后的每一天,脑海里时不时总是会浮现你的影子 </span><br />
+				i.miss(u);<br />
+				<span class="comments">// 我会尽我所能,用自己的方式,守护你...不再被别人伤害（逃 </span><br />
+				i.takeCareOf(u);<br />
+				<span class="comments">// 你说你脾气不好,性格也不好</span><br />
+				<span class="comments">// 我知道可能你会犹豫...犹豫我能不能接受可能并不是如此完美的你</span><br />
+				<span class="keyword">boolean</span> isHesitate = <span class="keyword">true</span>;<br />
+				<span class="placeholder"/><span class="comments">// 我没有思考很久,甚至觉得这么坦诚的你就是我要找的那一个人</span><br />
+				<span class="placeholder"/><span class="comments">// 毕竟我自己也是一个,吵架从来都不会主动认输（会改会改！！),有时也会吃醋,有时又很固执的一个人啊（补交家庭作业）</span><br />
+				<span class="comments">// 但无论你是什么样子,那都是你，我喜欢的是一个完整的你，而不仅仅是那些美好的方面。</span><br />
+				<span class="comments">// 我会等,等你说我愿意的那一天</span><br />
+				<span class="keyword">while</span> (isHesitate) {<br />
+				<span class="placeholder"/>i.waitFor(u);<br />
+				<span class="placeholder"/>isHesitate = u.thinkOver();<br />
+				}<br />
+				<span class="comments">// 等到我们互相信任,互相包容,坦诚相待的那一天,我就带你去我家吹空调...</span><br />
+				i.marry(u);<br />
+				i.liveHappilyWith(u);<br />
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						Vivian, I've been waiting for that day you say I do!
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						Love u forever and ever.<br/>
+						<div class="signature">- Eric</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="copyright">
+			Inspired by <a href="https://github.com/huronghua">BM Trip</a> project.<br />
+			Copyright © 2018 <a href='https://github.com/huronghua'>vivian.tech</a> 2018-永远
+		</div>
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2018, 2, 9);
+		together.setHours(01);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
 </body>
-<script th:src="@{/js/jquery-3.2.1.min.js}"></script>
-<script th:src="@{/js/bootstrap.js}"></script>
-<script th:src="@{/js/bootstrap-paginator.js}"></script>
-<script th:src="@{/js/pagination-demo.js}"></script>
 </html>
