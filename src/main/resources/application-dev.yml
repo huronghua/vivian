@@ -11,4 +11,4 @@ mybatis:
     call-setters-on-nulls: true
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 server:
-  port: 8088
+  port: 80
