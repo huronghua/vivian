@@ -14,6 +14,6 @@ public class VivianController {
 
 	@RequestMapping(value = "/")
 	public String hello(){
-		return "index";
+		return "index1";
 	}
 }
