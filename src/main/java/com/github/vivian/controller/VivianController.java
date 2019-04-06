@@ -13,7 +13,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class VivianController {
 
 	@RequestMapping(value = "/")
-	public String hello(){
+	public String vivian() {
 		return "index1";
+	}
+
+	@RequestMapping(value = "/erdan")
+	public String nannan() {
+		return "nannan";
 	}
 }
